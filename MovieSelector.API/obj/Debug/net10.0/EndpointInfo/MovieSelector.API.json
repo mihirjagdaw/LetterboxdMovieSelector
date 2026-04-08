@@ -1,0 +1,66 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "MovieSelector.API | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5290"
+    }
+  ],
+  "paths": {
+    "/api/Movie/upload": {
+      "post": {
+        "tags": [
+          "Movie"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "watchlist": {
+                    "$ref": "#/components/schemas/IFormFile"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Movie/random": {
+      "get": {
+        "tags": [
+          "Movie"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IFormFile": {
+        "type": "string",
+        "format": "binary"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Movie"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MovieSelector.API/MovieSelector.API.csproj" />
+  <Project Path="MovieSelector.Shared/MovieSelector.Shared.csproj" />
+  <Project Path="MovieSelector.Web/MovieSelector.Web.csproj" />
+</Solution>

@@ -1,0 +1,11 @@
+C:\Users\mihir\source\repos\MovieSelector.Shared\bin\Debug\net10.0\MovieSelector.Shared.deps.json
+C:\Users\mihir\source\repos\MovieSelector.Shared\bin\Debug\net10.0\MovieSelector.Shared.dll
+C:\Users\mihir\source\repos\MovieSelector.Shared\bin\Debug\net10.0\MovieSelector.Shared.pdb
+C:\Users\mihir\source\repos\MovieSelector.Shared\obj\Debug\net10.0\MovieSelector.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mihir\source\repos\MovieSelector.Shared\obj\Debug\net10.0\MovieSelector.Shared.AssemblyInfoInputs.cache
+C:\Users\mihir\source\repos\MovieSelector.Shared\obj\Debug\net10.0\MovieSelector.Shared.AssemblyInfo.cs
+C:\Users\mihir\source\repos\MovieSelector.Shared\obj\Debug\net10.0\MovieSelector.Shared.csproj.CoreCompileInputs.cache
+C:\Users\mihir\source\repos\MovieSelector.Shared\obj\Debug\net10.0\MovieSelector.Shared.dll
+C:\Users\mihir\source\repos\MovieSelector.Shared\obj\Debug\net10.0\refint\MovieSelector.Shared.dll
+C:\Users\mihir\source\repos\MovieSelector.Shared\obj\Debug\net10.0\MovieSelector.Shared.pdb
+C:\Users\mihir\source\repos\MovieSelector.Shared\obj\Debug\net10.0\ref\MovieSelector.Shared.dll

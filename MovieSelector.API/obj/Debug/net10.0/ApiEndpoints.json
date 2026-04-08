@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "MovieSelector.API.Controllers.MovieController",
+    "Method": "GetRandomMovie",
+    "RelativePath": "api/Movie/random",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieSelector.API.Controllers.MovieController",
+    "Method": "UploadMovies",
+    "RelativePath": "api/Movie/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "watchlist",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
