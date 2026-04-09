@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OkIxrF1NOo8=",
+  "dgSpecHash": "hne6jFTSt2o=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mihir\\source\\repos\\MovieSelector.Web\\MovieSelector.Web.csproj",
+  "projectFilePath": "C:\\Users\\mihir\\source\\repos\\LetterboxdMovieSelector\\MovieSelector.Web\\MovieSelector.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mihir\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.2\\microsoft.aspnetcore.app.internal.assets.10.0.2.nupkg.sha512",
     "C:\\Users\\mihir\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.2\\microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
