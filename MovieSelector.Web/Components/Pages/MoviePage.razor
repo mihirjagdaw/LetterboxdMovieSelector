@@ -14,21 +14,20 @@
 }
 else
 {
-    <div class="container d-flex align-items-center min-vh-100">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <h1>Welcome to Movie Selector!</h1>
-                <div class="card p-4 mt-5">
-                    <h2>Here's what I think you should watch!</h2>
-                    <div class="d-grid mt-3">
-                        <p>@movie.Name</p>
-                        <p>@movie.ReleaseYear</p>
-                        <button class="btn btn-primary mt-3" @onclick="randomMovie">Pick another movie</button>
-                    </div>
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="col-md-6">
+            <h1>Welcome to Movie Selector!</h1>
+            <div class="movie-card">
+                <h2 class="text-center">Here's what I think you should watch!</h2>
+                <div class="d-grid mt-3 text-center">
+                    <p>@movie.Name</p>
+                    <p>@movie.ReleaseYear</p>
+                    <button class="pick-btn mt-3" @onclick="randomMovie">Pick another movie</button>
                 </div>
             </div>
         </div>
     </div>
+   
 }
 @code {
 
@@ -46,3 +45,31 @@ else
     }
 
 }
+
+<style>
+    .movie-card {
+        background: #456;
+        border: 1px solid #345;
+        border-radius: 12px;
+        padding: 2rem;
+        color: rgb(170, 187, 204);
+    }
+
+    .pick-btn {
+        background: rgb(0, 172, 28);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.1s ease;
+        width: 100%;
+    }
+
+        .pick-btn:hover {
+            background: rgb(0, 145, 24);
+            transform: translateY(-1px);
+        }
+</style>
