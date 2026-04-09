@@ -12,3 +12,6 @@ C:\Users\mihir\source\repos\MovieSelector.API\obj\Debug\net10.0\staticwebassets.
 C:\Users\mihir\source\repos\MovieSelector.API\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\mihir\source\repos\MovieSelector.API\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\mihir\source\repos\LetterboxdMovieSelector\MovieSelector.API\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\mihir\source\repos\LetterboxdMovieSelector\MovieSelector.API\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\mihir\source\repos\LetterboxdMovieSelector\MovieSelector.API\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\mihir\source\repos\LetterboxdMovieSelector\MovieSelector.API\obj\Debug\net10.0\staticwebassets.build.json
