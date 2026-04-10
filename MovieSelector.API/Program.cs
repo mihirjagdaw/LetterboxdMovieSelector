@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddSingleton<MovieService>();
+builder.Services.AddHttpClient<YtsService>();
 
 var app = builder.Build();
 
@@ -15,6 +16,12 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.MapGet("/movie/yts", async (string title, YtsService yts) =>
+{
+    var result = await yts.searchMovieAsync(title);
+    return result is not null ? Results.Ok(result) : Results.NotFound();
+});
 
 app.UseHttpsRedirection();
 app.MapControllers();
