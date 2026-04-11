@@ -26,5 +26,15 @@ namespace MovieSelector.Web.Services
         {
             return await _httpClient.GetFromJsonAsync<Movie>("/api/movie/random");
         }
+
+        public async Task<YtsMovieResult?> GetYtsDataAsync (string title)
+        {
+            var response = await _httpClient.GetAsync($"/api/yts/search?title={Uri.EscapeDataString(title)}");
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadFromJsonAsync<YtsMovieResult>();
+            }
+            return null;
+        }
     }
 }

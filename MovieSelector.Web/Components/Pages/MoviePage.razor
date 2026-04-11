@@ -1,5 +1,6 @@
 ﻿@page "/movie"
 @rendermode InteractiveServer
+@using MovieSelector.API.Services
 @using MovieSelector.Shared.Models
 @using MovieSelector.Web.Services
 @inject MovieApiClient movieApiClient
@@ -19,11 +20,30 @@ else
             <h1>Welcome to Movie Selector!</h1>
             <div class="movie-card">
                 <h2 class="text-center">Here's what I think you should watch!</h2>
+                @if (!string.IsNullOrEmpty(ytsData?.MediumCoverImage))
+                {
+                    <div class="d-flex justify-content-center mb-3">
+                        <img src="@ytsData.MediumCoverImage" alt="@movie.Name Poster" class="img-fluid rounded" style="max-height: 400px;">
+                    </div>
+                }
                 <div class="d-grid mt-3 text-center">
                     <p>@movie.Name</p>
                     <p>@movie.ReleaseYear</p>
-                    <button class="pick-btn mt-3" @onclick="randomMovie">Pick another movie</button>
                 </div>
+                @if (ytsData?.Torrents != null && ytsData.Torrents.Any())
+                {
+                    <div class="d-grid gap-2 mt-3">
+                        <h5>Available Torrents:</h5>
+                        @foreach (var torrent in ytsData.Torrents)
+                        {
+                            var magnet = YtsService.BuildMagnetLink(torrent.Hash, ytsData.Title);
+                            <a href="@magnet" class="torrent-btn">
+                                ⬇ @torrent.Quality (@torrent.Size)
+                            </a>
+                        }
+                    </div>
+                }
+                <button class="pick-btn mt-3" @onclick="randomMovie">Pick another movie</button>
             </div>
         </div>
     </div>
@@ -32,7 +52,7 @@ else
 @code {
 
     private Movie? movie;
-
+    private YtsMovieResult? ytsData;
     protected override async Task OnInitializedAsync()
     {
         await randomMovie();
@@ -41,9 +61,14 @@ else
     private async Task randomMovie()
     {
         movie = null;
+        ytsData = null;
         movie = await movieApiClient.getRandomMovieAsync();
-    }
 
+        if (movie != null)
+        {
+            ytsData = await movieApiClient.GetYtsDataAsync(movie.Name);
+        }
+    }
 }
 
 <style>
@@ -71,5 +96,27 @@ else
         .pick-btn:hover {
             background: rgb(0, 145, 24);
             transform: translateY(-1px);
+        }
+
+    .movie-poster {
+        max-width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .torrent-btn {
+        display: block;
+        background: transparent;
+        color: rgb(170, 187, 204);
+        border: 1px solid #345;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.2s ease;
+    }
+
+        .torrent-btn:hover {
+            background: #345;
         }
 </style>

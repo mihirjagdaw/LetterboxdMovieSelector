@@ -14,7 +14,7 @@ namespace MovieSelector.API.Services
 
         public async Task<YtsMovieResult> searchMovieAsync (string title)
         {
-            var url = $"{BaseUrl}list_movies.json?query_term={Uri.EscapeDataString(title)}&llimit=1";
+            var url = $"{BaseUrl}list_movies.json?query_term={Uri.EscapeDataString(title)}&limit=1";
             var response = await _httpClient.GetFromJsonAsync<YtsResponse>(url);
             return response?.Data?.Movies?.FirstOrDefault();
         }
